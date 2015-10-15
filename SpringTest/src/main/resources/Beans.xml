@@ -5,8 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-  <bean id="helloWorld" class="sun.test.spring.BeansXMLHandler" scope="prototype">
-    <!--<property name="message" value="Hello World from Beans.xml...">-->
+  <bean id="helloWorld"
+        class="sun.test.spring.HelloWorld"
+        init-method="init" destroy-method="destroy">
+    <property name="message" value="Hello World from Beans.xml..."/>
   </bean>
 
 </beans>
