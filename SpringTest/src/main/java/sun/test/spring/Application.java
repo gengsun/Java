@@ -28,6 +28,14 @@ public class Application
 
         context = new ClassPathXmlApplicationContext("Beans.xml");
         BeansXMLHandler handler = (BeansXMLHandler) context.getBean("helloWorld");
+
+        handler.setMessage("I am bean A");
+        handler.getMessage();
+
+        BeansXMLHandler handler1 = (BeansXMLHandler) context.getBean("helloWorld");
+        handler1.setMessage("I am bean B");
+        handler1.getMessage();
+
         handler.getMessage();
     }
 }
