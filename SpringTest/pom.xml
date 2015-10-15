@@ -15,6 +15,12 @@
       <artifactId>spring-context</artifactId>
       <version>4.2.1.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
 
   <build>
