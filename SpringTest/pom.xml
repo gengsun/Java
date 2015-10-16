@@ -28,16 +28,6 @@
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.6</version>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-          <archive>
-            <manifest>
-              <mainClass>sun.test.spring.Application</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
         <executions>
           <execution>
             <id>make-assembly</id> <!-- this is used for inheritance merges -->
@@ -45,6 +35,16 @@
             <goals>
               <goal>single</goal>
             </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/assembly/dist.xml</descriptor>
+              </descriptors>
+              <archive>
+                <manifest>
+                  <mainClass>sun.test.spring.Application</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
           </execution>
         </executions>
       </plugin>
