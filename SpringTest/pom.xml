@@ -6,11 +6,7 @@
 
   <groupId>sun.test.spring</groupId>
   <artifactId>SpringTest</artifactId>
-  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>bbp</module>
-  </modules>
   <name>Spring Test</name>
 
   <dependencies>
