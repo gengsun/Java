@@ -22,9 +22,9 @@ public class Application
 
     public static void main(String[] args)
     {
-        AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(Application.class);
-        MessagePrinter printer = applicationContext.getBean(MessagePrinter.class);
-        printer.printMessage();
+//        AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(Application.class);
+//        MessagePrinter printer = applicationContext.getBean(MessagePrinter.class);
+//        printer.printMessage();
 
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
