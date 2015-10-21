@@ -5,14 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-  <bean id="helloWorld" class="sun.test.spring.HelloWorld">
-    <property name="message1" value="Hello World..."/>
-    <property name="message2" value="Hello World again..."/>
+  <bean id="beanTeamplate" abstract="true">
+    <property name="message1" value="Hello World!"/>
+    <property name="message2" value="Hello Second World!"/>
+    <property name="message3" value="Hello Third World!"/>
   </bean>
 
-  <bean id="helloChina" class="sun.test.spring.HelloChina" parent="helloWorld">
-    <property name="message1" value="Hello China..."/>
-    <property name="message3" value="Hello from child..."/>
+  <bean id="helloChina" class="sun.test.spring.HelloChina" parent="beanTeamplate">
+    <property name="message1" value="Hello China!"/>
+    <property name="message3" value="China Rocks!"/>
   </bean>
 
   <!--<bean class="sun.test.spring.InitHelloWorld" />-->
