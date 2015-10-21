@@ -5,25 +5,26 @@ package sun.test.spring;
  */
 public class HelloWorld
 {
-    private String message;
+    private String message1;
+    private String message2;
 
-    public void getMessage()
+    public void setMessage1(String message)
     {
-        System.out.println("message = " + message);
+        this.message1 = message;
     }
 
-    public void setMessage(String message)
+    public void setMessage2(String message)
     {
-        this.message = message;
+        this.message2 = message;
     }
 
-    private void init()
+    public void getMessage1()
     {
-        System.out.println("Bean is being initialised...");
+        System.out.println("World Message1 : " + message1);
     }
 
-    private void destroy()
+    public void getMessage2()
     {
-        System.out.println("Bean is being destroyed...");
+        System.out.println("World Message2 : " + message2);
     }
 }
