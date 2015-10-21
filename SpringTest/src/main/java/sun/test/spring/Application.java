@@ -29,13 +29,9 @@ public class Application
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
 
-//        AbstractApplicationContext context1 = new ClassPathXmlApplicationContext("Beans.xml");
-//        HelloWorld obj1 = (HelloWorld) context1.getBean("helloWorld");
-
         obj.getMessage();
-//        obj1.setMessage("changed message...");
-//        obj1.getMessage();
-//        obj.getMessage();
+        obj.setMessage("new message");
+        obj.getMessage();
 
         context.registerShutdownHook();
     }

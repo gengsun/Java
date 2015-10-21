@@ -11,4 +11,6 @@
     <property name="message" value="Hello World from Beans.xml..."/>
   </bean>
 
+  <bean class="sun.test.spring.InitHelloWorld" />
+
 </beans>

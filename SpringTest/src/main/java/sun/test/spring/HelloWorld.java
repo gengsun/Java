@@ -22,7 +22,7 @@ public class HelloWorld
         System.out.println("Bean is being initialised...");
     }
 
-    public void destroy()
+    private void destroy()
     {
         System.out.println("Bean is being destroyed...");
     }
