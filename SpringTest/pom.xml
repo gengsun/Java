@@ -9,10 +9,6 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <modules>
-    <module>BeanPostProcessors</module>
-  </modules>
-
   <name>Spring Test</name>
 
   <dependencies>
@@ -45,16 +41,15 @@
               <!--<descriptors>-->
                 <!--<descriptor>src/main/assembly/dist.xml</descriptor>-->
               <!--</descriptors>-->
-              <!--<archive>-->
-                <!--<manifest>-->
-                  <!--<mainClass>sun.test.spring.Application</mainClass>-->
-                <!--</manifest>-->
-              <!--</archive>-->
             <!--</configuration>-->
           <!--</execution>-->
         <!--</executions>-->
       <!--</plugin>-->
     <!--</plugins>-->
   <!--</build>-->
+
+  <modules>
+    <module>BeanPostProcessors</module>
+  </modules>
 
 </project>
