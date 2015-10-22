@@ -5,11 +5,45 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-  <!-- Definition for textEditor bean using inner bean -->
-  <bean id="textEditor" class="sun.java.spring.TextEditor">
-    <property name="spellChecker">
-      <bean id="spellChecker" class="sun.java.spring.SpellChecker"/>
+  <!-- Definition for collectionExample -->
+  <bean id="collectionExample" class="sun.java.spring.CollectionExample">
+
+    <!-- results in a setAddressList(java.util.List) call -->
+    <property name="addressList">
+      <list>
+        <value>China</value>
+        <value>UK</value>
+        <value>USA</value>
+      </list>
     </property>
+
+    <!-- results in a setAddressSet(java.util.Set) call -->
+    <property name="addressSet">
+      <set>
+        <value>China</value>
+        <value>UK</value>
+        <value>USA</value>
+      </set>
+    </property>
+
+    <!-- results in a setAddressMap(java.util.Map) call -->
+    <property name="addressMap">
+      <map>
+        <entry key="1" value="China"/>
+        <entry key="2" value="UK"/>
+        <entry key="3" value="USA"/>
+      </map>
+    </property>
+
+    <!-- results in a setAddressProp(java.util.Properties) call -->
+    <property name="addressProp">
+      <props>
+        <prop key="one">China</prop>
+        <prop key="two">UK</prop>
+        <prop key="three">USA</prop>
+      </props>
+    </property>
+
   </bean>
 
 </beans>

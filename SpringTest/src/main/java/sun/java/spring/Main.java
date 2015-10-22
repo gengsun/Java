@@ -12,8 +12,11 @@ public class Main
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        TextEditor textEditor = (TextEditor) context.getBean("textEditor");
+        CollectionExample example = (CollectionExample) context.getBean("collectionExample");
 
-        textEditor.spellCheck();
+        example.getAddressList();
+        example.getAddressSet();
+        example.getAddressMap();
+        example.getAddressProp();
     }
 }
