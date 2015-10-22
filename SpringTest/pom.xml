@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>sun.test.spring</groupId>
+  <groupId>sun.java.spring</groupId>
   <artifactId>SpringTest</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Spring Test</name>
@@ -41,7 +41,7 @@
               </descriptors>
               <archive>
                 <manifest>
-                  <mainClass>sun.test.spring.Application</mainClass>
+                  <mainClass>sun.java.spring.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
