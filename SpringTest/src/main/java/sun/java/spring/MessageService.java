@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MessageService
 {
-    @Bean
+    @Bean(initMethod = "init", destroyMethod = "destroy")
     public MessagePrinter messageSerive()
     {
         return new MessagePrinter();

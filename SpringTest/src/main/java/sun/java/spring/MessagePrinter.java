@@ -16,4 +16,14 @@ public class MessagePrinter
     {
         System.out.println("TutorialsPoint Annotation Configuration...");
     }
+
+    public void init()
+    {
+        System.out.println("Initialising...");
+    }
+
+    public void destroy()
+    {
+        System.out.println("Destroying...");
+    }
 }
