@@ -1,19 +1,24 @@
 package sun.java.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * Created by sun on 22/10/15.
  */
+@Component
 public class MessagePrinter
 {
-    private String message;
+    final private MessageService service;
 
-    public void setMessage(String message)
+    @Autowired
+    public MessagePrinter(MessageService service)
     {
-        this.message = message;
+        this.service = service;
     }
 
     public void printMessage()
     {
-        System.out.println("TutorialsPoint Annotation Configuration...");
+        System.out.println(this.service.getMessage());
     }
 }
