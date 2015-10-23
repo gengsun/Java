@@ -9,25 +9,11 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by sun on 22/10/15.
  */
-@Configuration
-@ComponentScan
 public class Main
 {
-    @Bean
-    MessageService messageService()
-    {
-        return new MessageService()
-        {
-            public String getMessage()
-            {
-                return "Basic Annotation Configuration";
-            }
-        };
-    }
-
     public static void main(String[] args)
     {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(MessageService.class);
 
         MessagePrinter printer = context.getBean(MessagePrinter.class);
 
