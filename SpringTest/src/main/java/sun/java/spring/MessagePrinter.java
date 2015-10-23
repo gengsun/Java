@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessagePrinter
 {
-    final MessageService service;
+    private MessageService service;
 
     @Autowired
-    public MessagePrinter(MessageService service)
+    public void setService(MessageService service)
     {
         this.service = service;
     }
