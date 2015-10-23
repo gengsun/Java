@@ -6,12 +6,9 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by sun on 22/10/15.
  */
-@Configuration
-public class MessageService
+public interface MessageService
 {
-    @Bean(initMethod = "init", destroyMethod = "destroy")
-    public MessagePrinter messageSerive()
-    {
-        return new MessagePrinter();
-    }
+    String getMessage();
+    void init();
+    void destroy();
 }

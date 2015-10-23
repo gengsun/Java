@@ -10,10 +10,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        AbstractApplicationContext context = new AnnotationConfigApplicationContext(MessageService.class);
+        AbstractApplicationContext context = new AnnotationConfigApplicationContext(HelloWorld.class);
 
         MessagePrinter printer = context.getBean(MessagePrinter.class);
-        printer.setMessage("Annotation lifecycle callbacks");
         printer.printMessage();
 
         context.registerShutdownHook();

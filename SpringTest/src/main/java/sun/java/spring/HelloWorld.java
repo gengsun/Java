@@ -11,16 +11,28 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class HelloWorld
 {
-//    @Bean
-//    public MessageService messageService()
-//    {
-//        return new MessageService()
-//        {
-//            @Override
-//            public String getMessage()
-//            {
-//                return "Hello World...";
-//            }
-//        };
-//    }
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    public MessageService messageService()
+    {
+        return new MessageService()
+        {
+            @Override
+            public String getMessage()
+            {
+                return "Hello World...";
+            }
+
+            @Override
+            public void init()
+            {
+                System.out.println("Initialising...");
+            }
+
+            @Override
+            public void destroy()
+            {
+                System.out.println("Destroying...");
+            }
+        };
+    }
 }
