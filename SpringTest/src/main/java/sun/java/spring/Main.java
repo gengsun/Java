@@ -12,11 +12,7 @@ public class Main
     {
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(BeansConfig.class);
 
-        context.start();
-
-        MessagePrinter printer = context.getBean(MessagePrinter.class);
-        printer.printMessage();
-
-        context.stop();
+        CustomEventPublisher publisher = context.getBean(CustomEventPublisher.class);
+        publisher.publish();
     }
 }

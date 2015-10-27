@@ -1,7 +1,6 @@
 package sun.java.spring;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -11,20 +10,14 @@ import org.springframework.context.annotation.Configuration;
 public class BeansConfig
 {
     @Bean
-    public MessagePrinter messagePrinter()
+    public CustomEventPublisher customEventPublisher()
     {
-        return new MessagePrinter();
+        return new CustomEventPublisher();
     }
 
     @Bean
-    public StartEventHandler startEventHandler()
+    public CustomEventHandler customEventHandler()
     {
-        return new StartEventHandler();
-    }
-
-    @Bean
-    public StopEventHandler stopEventHandler()
-    {
-        return new StopEventHandler();
+        return new CustomEventHandler();
     }
 }
