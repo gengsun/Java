@@ -9,7 +9,7 @@ public interface ICustomerService
 
     String addCustomerReturnValue();
 
-    void addCustomerThrowException() throws Exception;
+    void addCustomerThrowException();
 
     void addCustomerAround(String name);
 }

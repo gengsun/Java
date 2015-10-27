@@ -1,4 +1,4 @@
-package sun.java.spring.aop.impl;
+package sun.java.spring.aop;
 
 import sun.java.spring.aop.ICustomerService;
 
@@ -21,10 +21,15 @@ public class CustomerService implements ICustomerService
     }
 
     @Override
-    public void addCustomerThrowException() throws Exception
+    public void addCustomerThrowException()
     {
         System.out.println("addCustomerThrowException() is running ");
-        throw new Exception("Generic Error");
+
+        try {
+            throw new Exception("Generic Error");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

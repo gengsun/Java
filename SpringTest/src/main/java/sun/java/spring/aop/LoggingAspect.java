@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Aspect
 public class LoggingAspect
 {
-    @Before("execution(* sun.java.spring.aop.impl.CustomerService.addCustomer(..))")
+    @Before("execution(* sun.java.spring.aop.CustomerService.addCustomer(..))")
     public void logBefore(JoinPoint joinPoint)
     {
         System.out.println("logBefore() is running...");
@@ -20,7 +20,7 @@ public class LoggingAspect
         System.out.println("******");
     }
 
-    @After("execution(* sun.java.spring.aop.impl.CustomerService.addCustomer(..))")
+    @After("execution(* sun.java.spring.aop.CustomerService.addCustomer(..))")
     public void logAfter(JoinPoint joinPoint)
     {
         System.out.println("logAfter() is running!");
@@ -28,7 +28,7 @@ public class LoggingAspect
         System.out.println("******");
     }
 
-    @AfterReturning(pointcut = "execution(* sun.java.spring.aop.impl.CustomerService.addCustomerReturnValue(..))", returning = "result")
+    @AfterReturning(pointcut = "execution(* sun.java.spring.aop.CustomerService.addCustomerReturnValue(..))", returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result)
     {
         System.out.println("logAfterReturning() is running!");
@@ -37,7 +37,7 @@ public class LoggingAspect
         System.out.println("******");
     }
 
-    @AfterThrowing(pointcut = "execution(* sun.java.spring.aop.impl.CustomerService.addCustomerThrowException(..))", throwing= "error")
+    @AfterThrowing(pointcut = "execution(* sun.java.spring.aop.CustomerService.addCustomerThrowException(..))", throwing= "error")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable error)
     {
         System.out.println("logAfterThrowing() is running!");
@@ -46,7 +46,7 @@ public class LoggingAspect
         System.out.println("******");
     }
 
-    @Around("execution(* sun.java.spring.aop.impl.CustomerService.addCustomerAround(..))")
+    @Around("execution(* sun.java.spring.aop.CustomerService.addCustomerAround(..))")
     public void logAround(ProceedingJoinPoint joinPoint) throws Throwable
     {
         System.out.println("logAround() is running!");

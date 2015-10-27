@@ -3,7 +3,6 @@ package sun.java.spring.aop;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import sun.java.spring.aop.impl.CustomerService;
 
 /**
  * Created by sun on 27/10/15.

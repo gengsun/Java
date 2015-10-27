@@ -2,14 +2,13 @@ package sun.java.spring.aop;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import sun.java.spring.aop.impl.CustomerService;
 
 /**
  * Created by sun on 27/10/15.
  */
 public class Main
 {
-    public static void main(String[] args) throws Exception
+    public static void main(String[] args)
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeansConfig.class);
 
@@ -19,7 +18,7 @@ public class Main
 
         service.addCustomerReturnValue();
 
-//        service.addCustomerThrowException();
+        service.addCustomerThrowException();
 
         service.addCustomerAround("AOP");
     }
