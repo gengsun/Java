@@ -9,12 +9,18 @@ import sun.java.spring.aop.impl.CustomerService;
  */
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeansConfig.class);
 
         ICustomerService service = context.getBean(ICustomerService.class);
 
         service.addCustomer();
+
+        service.addCustomerReturnValue();
+
+//        service.addCustomerThrowException();
+
+        service.addCustomerAround("AOP");
     }
 }
