@@ -2,7 +2,7 @@ package sun.java.spring.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -10,14 +10,17 @@ import java.util.List;
 /**
  * Created by sun on 28/10/15.
  */
+
+@Component
 public class StudentDAO implements IStudentDAO
 {
-    private JdbcTemplate jdbcTemplateObject;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
+    @Autowired
     public void setDataSource(DataSource dataSource)
     {
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override
@@ -25,7 +28,7 @@ public class StudentDAO implements IStudentDAO
     {
         String SQL = "insert into Student (name, age) values (?, ?)";
 
-        jdbcTemplateObject.update( SQL, name, age);
+        jdbcTemplate.update( SQL, name, age);
         System.out.println("Created Record Name = " + name + " Age = " + age);
     }
 
@@ -33,7 +36,7 @@ public class StudentDAO implements IStudentDAO
     public Student getStudent(Integer id)
     {
         String SQL = "select * from Student where id = ?";
-        Student student = jdbcTemplateObject.queryForObject(SQL, new Object[]{id}, new StudentMapper());
+        Student student = jdbcTemplate.queryForObject(SQL, new Object[]{id}, new StudentMapper());
         return student;
     }
 
@@ -41,7 +44,7 @@ public class StudentDAO implements IStudentDAO
     public List<Student> listStudents()
     {
         String SQL = "select * from Student";
-        List <Student> students = jdbcTemplateObject.query(SQL, new StudentMapper());
+        List <Student> students = jdbcTemplate.query(SQL, new StudentMapper());
         return students;
     }
 
@@ -49,7 +52,7 @@ public class StudentDAO implements IStudentDAO
     public void delete(Integer id)
     {
         String SQL = "delete from Student where id = ?";
-        jdbcTemplateObject.update(SQL, id);
+        jdbcTemplate.update(SQL, id);
         System.out.println("Deleted Record with ID = " + id );
     }
 
@@ -57,7 +60,7 @@ public class StudentDAO implements IStudentDAO
     public void update(Integer id, Integer age)
     {
         String SQL = "update Student set age = ? where id = ?";
-        jdbcTemplateObject.update(SQL, age, id);
+        jdbcTemplate.update(SQL, age, id);
         System.out.println("Updated Record with ID = " + id );
     }
 
@@ -65,7 +68,7 @@ public class StudentDAO implements IStudentDAO
     public void truncate()
     {
         String SQL = "truncate Student";
-        jdbcTemplateObject.update(SQL);
+        jdbcTemplate.update(SQL);
         System.out.println("Table truncated.");
     }
 }

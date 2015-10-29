@@ -1,20 +1,21 @@
 package sun.java.spring.jdbc;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
 
 /**
  * Created by sun on 28/10/15.
  */
+
 public class Main
 {
     public static void main(String[] args)
     {
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(BeansConfig.class);
 
-        StudentDAO studentDAO = (StudentDAO) context.getBean("studentDAO");
+        StudentDAO studentDAO = context.getBean(StudentDAO.class);
 
         System.out.println("------Records Creation--------");
         studentDAO.create("Zara", 11);
