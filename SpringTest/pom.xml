@@ -8,6 +8,7 @@
   <artifactId>SpringTest</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Spring Test</name>
+  <packaging>war</packaging>
 
   <properties>
     <spring.version>4.2.1.RELEASE</spring.version>
@@ -29,13 +30,31 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>4.2.1.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>4.2.1.RELEASE</version>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
     </dependency>
 
     <dependency>
@@ -81,11 +100,6 @@
               <descriptors>
                 <descriptor>src/main/assembly/dist.xml</descriptor>
               </descriptors>
-              <archive>
-                <manifest>
-                  <mainClass>sun.java.spring.jdbc.Main</mainClass>
-                </manifest>
-              </archive>
             </configuration>
           </execution>
         </executions>
@@ -98,6 +112,16 @@
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <webappDirectory>WebContent</webappDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
 
