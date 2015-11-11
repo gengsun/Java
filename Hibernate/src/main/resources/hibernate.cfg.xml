@@ -14,9 +14,6 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">nomad123</property>
 
-    <!-- List of XML mapping files -->
-    <mapping resource="Employee.hbm.xml"/>
-
   </session-factory>
 
 </hibernate-configuration>

@@ -22,6 +22,6 @@ public class Main
 
         employeeDAO.listEmployees();
 
-        HibernateUtil.shutDown();
+        employeeDAO.shutDown();
     }
 }

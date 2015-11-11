@@ -34,4 +34,9 @@ public interface IEmployeeDAO
      * @param employeeID
      */
     void deleteEmployee(Integer employeeID);
+
+    /**
+     * Method to close the SessionFactory
+     */
+    void shutDown();
 }

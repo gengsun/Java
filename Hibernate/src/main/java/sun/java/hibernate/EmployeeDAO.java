@@ -1,6 +1,7 @@
 package sun.java.hibernate;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
 
 import java.util.List;
@@ -10,7 +11,17 @@ import java.util.List;
  */
 public class EmployeeDAO implements IEmployeeDAO
 {
-    private static final SessionFactory SESSION_FACTORY = HibernateUtil.getSessionFactory();
+    private static final SessionFactory SESSION_FACTORY = buildSessionFactory();
+
+    private static SessionFactory buildSessionFactory()
+    {
+        try {
+            return new Configuration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Initial SessionFactory creation failed." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
 
     @Override
     public Integer addEmployee(String fname, String lname, int salary)
@@ -54,6 +65,7 @@ public class EmployeeDAO implements IEmployeeDAO
         employee.setSalary(salary);
         session.update(employee);
         session.getTransaction().commit();
+
         session.close();
     }
 
@@ -66,6 +78,13 @@ public class EmployeeDAO implements IEmployeeDAO
         Employee employee = (Employee)session.get(Employee.class, employeeID);
         session.delete(employee);
         session.getTransaction().commit();
+
         session.close();
+    }
+
+    @Override
+    public void shutDown()
+    {
+        SESSION_FACTORY.close();
     }
 }

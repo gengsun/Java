@@ -1,13 +1,30 @@
 package sun.java.hibernate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by sun on 10/11/15.
  */
+
+@Entity
+@Table(name = "Employee")
 public class Employee
 {
+    @Id @GeneratedValue
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "salary")
     private int salary;
 
     public Employee() {}
