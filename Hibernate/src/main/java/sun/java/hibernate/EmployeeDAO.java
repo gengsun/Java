@@ -11,12 +11,12 @@ import java.util.List;
  */
 public class EmployeeDAO implements IEmployeeDAO
 {
-    private static final SessionFactory SESSION_FACTORY = buildSessionFactory();
+    private static final SessionFactory SESSION_FACTORY;
 
-    private static SessionFactory buildSessionFactory()
+    static
     {
         try {
-            return new Configuration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
+            SESSION_FACTORY = new Configuration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
