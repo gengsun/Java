@@ -11,33 +11,33 @@
   <packaging>war</packaging>
 
   <properties>
-    <spring.version>4.2.1.RELEASE</spring.version>
+    <spring.version>3.2.6.RELEASE</spring.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
+      <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework</groupId>-->
+      <!--<artifactId>spring-aop</artifactId>-->
+      <!--<version>${spring.version}</version>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework</groupId>-->
+      <!--<artifactId>spring-tx</artifactId>-->
+      <!--<version>${spring.version}</version>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework</groupId>-->
+      <!--<artifactId>spring-jdbc</artifactId>-->
+      <!--<version>${spring.version}</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -57,23 +57,23 @@
       <version>1.2</version>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.15</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>mysql</groupId>-->
+      <!--<artifactId>mysql-connector-java</artifactId>-->
+      <!--<version>5.1.15</version>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjrt</artifactId>
-      <version>1.6.11</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.aspectj</groupId>-->
+      <!--<artifactId>aspectjrt</artifactId>-->
+      <!--<version>1.6.11</version>-->
+    <!--</dependency>-->
 
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>1.6.11</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.aspectj</groupId>-->
+      <!--<artifactId>aspectjweaver</artifactId>-->
+      <!--<version>1.6.11</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>log4j</groupId>
@@ -86,24 +86,24 @@
   <build>
     <plugins>
 
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
-        <executions>
-          <execution>
-            <id>make-assembly</id> <!-- this is used for inheritance merges -->
-            <phase>package</phase> <!-- bind to the packaging phase -->
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptors>
-                <descriptor>src/main/assembly/dist.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+      <!--<plugin>-->
+        <!--<artifactId>maven-assembly-plugin</artifactId>-->
+        <!--<version>2.6</version>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>make-assembly</id> &lt;!&ndash; this is used for inheritance merges &ndash;&gt;-->
+            <!--<phase>package</phase> &lt;!&ndash; bind to the packaging phase &ndash;&gt;-->
+            <!--<goals>-->
+              <!--<goal>single</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<descriptors>-->
+                <!--<descriptor>src/main/assembly/dist.xml</descriptor>-->
+              <!--</descriptors>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -120,7 +120,8 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.6</version>
         <configuration>
-          <webappDirectory>WebContent</webappDirectory>
+          <warName>HelloWorld</warName>
+          <webappDirectory>src/main/webapp</webappDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
