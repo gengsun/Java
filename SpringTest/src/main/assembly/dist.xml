@@ -4,19 +4,20 @@
   <id>dist</id>
   <formats>
     <format>tar.gz</format>
-    <!--<format>war</format>-->
     <format>dir</format>
   </formats>
 
   <includeBaseDirectory>false</includeBaseDirectory>
 
-  <dependencySets>
-    <dependencySet>
-      <outputDirectory>/</outputDirectory>
-      <useProjectArtifact>true</useProjectArtifact>
-      <unpack>true</unpack>
-      <scope>runtime</scope>
-    </dependencySet>
-  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>${project.build.directory}</directory>
+      <outputDirectory>/jboss</outputDirectory>
+      <fileMode>0664</fileMode>
+      <includes>
+        <include>*.war</include>
+      </includes>
+    </fileSet>
+  </fileSets>
 
 </assembly>
