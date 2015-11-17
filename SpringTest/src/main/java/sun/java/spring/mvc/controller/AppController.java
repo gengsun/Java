@@ -148,7 +148,7 @@ public class AppController
     @RequestMapping(value = {"/hello"}, method = RequestMethod.GET)
     public String printHello(ModelMap modelMap)
     {
-        modelMap.addAttribute("message", "Sun's Spring MVC Example.");
+        modelMap.addAttribute("message", "Sun's Spring MVC Example...");
         return "hello";
     }
 }

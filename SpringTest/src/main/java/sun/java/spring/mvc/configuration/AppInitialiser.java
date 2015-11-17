@@ -1,27 +1,27 @@
 package sun.java.spring.mvc.configuration;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
 /**
  * Created by sun on 16/11/15.
  */
-public class AppInitialiser extends AbstractAnnotationConfigDispatcherServletInitializer
+public class AppInitialiser implements WebApplicationInitializer
 {
-    @Override
-    protected Class<?>[] getRootConfigClasses()
+    public void onStartup(ServletContext container) throws ServletException
     {
-        return new Class[]{AppConfig.class};
-    }
+        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.setServletContext(container);
 
-    @Override
-    protected Class<?>[] getServletConfigClasses()
-    {
-        return null;
-    }
+        ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
 
-    @Override
-    protected String[] getServletMappings()
-    {
-        return new String[]{"/"};
+        servlet.setLoadOnStartup(1);
+        servlet.addMapping("/");
     }
 }
