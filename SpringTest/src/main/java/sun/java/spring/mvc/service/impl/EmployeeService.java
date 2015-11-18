@@ -42,7 +42,7 @@ public class EmployeeService implements IEmployeeService
         entity.setName(employee.getName());
         entity.setJoiningDate(employee.getJoiningDate());
         entity.setSalary(employee.getSalary());
-        entity.setNINumber(employee.getNINumber());
+        entity.setNin(employee.getNin());
     }
 
     @Override

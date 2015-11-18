@@ -23,22 +23,22 @@ public class Employee
     private int id;
 
     @Size(min = 3, max = 50)
-    @Column(name = "name", nullable = false)
+    @Column(name = "NAME", nullable = false)
     private String name;
 
     @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "joining_date", nullable = false)
+    @Column(name = "JOINING_DATE", nullable = false)
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     private LocalDate joiningDate;
 
     @NotNull
     @Digits(integer = 8, fraction = 2)
-    @Column(name = "salary", nullable = false)
+    @Column(name = "SALARY", nullable = false)
     private BigDecimal salary;
 
     @NotEmpty
-    @Column(name = "national_insurance_number", unique = true, nullable = false)
+    @Column(name = "NATIONAL_INSURANCE_NUMBER", unique = true, nullable = false)
     private String nin;
 
     public int getId()
@@ -81,12 +81,12 @@ public class Employee
         this.salary = salary;
     }
 
-    public String getNINumber()
+    public String getNin()
     {
         return nin;
     }
 
-    public void setNINumber(String nin)
+    public void setNin(String nin)
     {
         this.nin = nin;
     }

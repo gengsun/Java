@@ -75,8 +75,8 @@ public class AppController
             return "registration";
         }
 
-        if (!service.isEmployeeNinUnique(employee.getId(), employee.getNINumber())) {
-            FieldError ninError = new FieldError("employee", "nin", messageSource.getMessage("non.unique.nin", new String[]{employee.getNINumber()}, Locale.getDefault()));
+        if (!service.isEmployeeNinUnique(employee.getId(), employee.getNin())) {
+            FieldError ninError = new FieldError("employee", "nin", messageSource.getMessage("non.unique.nin", new String[]{employee.getNin()}, Locale.getDefault()));
             result.addError(ninError);
             return "registration";
         }
@@ -120,8 +120,8 @@ public class AppController
             return "registration";
         }
 
-        if (!service.isEmployeeNinUnique(employee.getId(), employee.getNINumber())) {
-            FieldError ninError = new FieldError("employee", "nin", messageSource.getMessage("non.unique.nin", new String[]{employee.getNINumber()}, Locale.getDefault()));
+        if (!service.isEmployeeNinUnique(employee.getId(), employee.getNin())) {
+            FieldError ninError = new FieldError("employee", "nin", messageSource.getMessage("non.unique.nin", new String[]{employee.getNin()}, Locale.getDefault()));
             result.addError(ninError);
             return "registration";
         }
