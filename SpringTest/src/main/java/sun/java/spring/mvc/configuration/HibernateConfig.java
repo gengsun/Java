@@ -10,6 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -18,6 +19,7 @@ import java.util.Properties;
  * Created by sun on 16/11/15.
  */
 @Configuration
+@EnableTransactionManagement
 @ComponentScan({"sun.java.spring.mvc.configuration"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfig
