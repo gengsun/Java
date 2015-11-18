@@ -30,7 +30,7 @@ public class EmployeeDao extends AbstractDao<Integer, Employee> implements IEmpl
     @Override
     public void deleteEmployeeByNin(String nin)
     {
-        Query query = getSession().createSQLQuery("delete from EMPLOYEE where national_insurance_number = :nin");
+        Query query = getSession().createSQLQuery("delete from Employee where nin = :nin");
         query.setString("nin", nin);
         query.executeUpdate();
     }
@@ -46,7 +46,7 @@ public class EmployeeDao extends AbstractDao<Integer, Employee> implements IEmpl
     public Employee findEmployeeByNin(String nin)
     {
         Criteria criteria = createEntityCriteria();
-        criteria.add(Restrictions.eq("national_insurance_number", nin));
+        criteria.add(Restrictions.eq("nin", nin));
         return (Employee) criteria.uniqueResult();
     }
 }

@@ -50,7 +50,7 @@ public class AppController
      * @param model
      * @return
      */
-    @RequestMapping(value = {"/new"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
     public String newEmployee(ModelMap model)
     {
         Employee employee = new Employee();
@@ -68,7 +68,7 @@ public class AppController
      * @param model
      * @return
      */
-    @RequestMapping(value = {"/new"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public String saveEmployee(@Valid Employee employee, BindingResult result, ModelMap model)
     {
         if (result.hasErrors()) {
@@ -83,7 +83,7 @@ public class AppController
 
         service.saveEmployee(employee);
 
-        model.addAttribute("success", "Employee " + employee.getName() + " registered successfully");
+        model.addAttribute("success", "Employee " + employee.getName() + " registered successfully.");
         return "success";
     }
 
@@ -128,7 +128,7 @@ public class AppController
 
         service.updateEmployee(employee);
 
-        model.addAttribute("success", "Employee " + employee.getName() + " updated successfully");
+        model.addAttribute("success", "Employee " + employee.getName() + " updated successfully.");
         return "success";
     }
 
@@ -143,12 +143,5 @@ public class AppController
     {
         service.deleteEmployeeByNin(nin);
         return "redirect:/list";
-    }
-
-    @RequestMapping(value = {"/hello"}, method = RequestMethod.GET)
-    public String printHello(ModelMap modelMap)
-    {
-        modelMap.addAttribute("message", "Sun's Spring MVC Example.");
-        return "hello";
     }
 }
