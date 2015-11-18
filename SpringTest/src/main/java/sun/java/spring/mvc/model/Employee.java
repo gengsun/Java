@@ -23,18 +23,18 @@ public class Employee
     private int id;
 
     @Size(min = 3, max = 50)
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "JOINING_DATE", nullable = false)
+    @Column(name = "joining_date", nullable = false)
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     private LocalDate joiningDate;
 
     @NotNull
     @Digits(integer = 8, fraction = 2)
-    @Column(name = "SALARY", nullable = false)
+    @Column(name = "salary", nullable = false)
     private BigDecimal salary;
 
     @NotEmpty

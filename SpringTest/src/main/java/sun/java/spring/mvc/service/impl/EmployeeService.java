@@ -3,7 +3,7 @@ package sun.java.spring.mvc.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sun.java.spring.mvc.dao.impl.EmployeeDao;
+import sun.java.spring.mvc.dao.IEmployeeDao;
 import sun.java.spring.mvc.model.Employee;
 import sun.java.spring.mvc.service.IEmployeeService;
 
@@ -17,7 +17,7 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService
 {
     @Autowired
-    private EmployeeDao dao;
+    private IEmployeeDao dao;
 
     @Override
     public Employee findById(int id)
