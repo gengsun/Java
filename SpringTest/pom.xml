@@ -88,12 +88,6 @@
       <version>2.3.1</version>
     </dependency>
 
-    <!--<dependency>-->
-      <!--<groupId>javassist</groupId>-->
-      <!--<artifactId>javassist</artifactId>-->
-      <!--<version>3.12.1.GA</version>-->
-    <!--</dependency>-->
-
     <!-- Joda-Time -->
     <dependency>
       <groupId>joda-time</groupId>
@@ -207,7 +201,7 @@
                   <directory>${project.build.directory}</directory>
                   <excludes>
                     <exclude>**/*dist/</exclude>
-                    <include>**/*.tar.gz</include>
+                    <exclude>**/*.tar.gz</exclude>
                   </excludes>
                 </fileset>
               </filesets>
