@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by sun on 16/11/15.
  */
-public interface IEmployeeDao
+public interface EmployeeDao
 {
     Employee findById(int id);
 

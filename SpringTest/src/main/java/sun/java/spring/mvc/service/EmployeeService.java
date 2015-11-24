@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by sun on 12/11/15.
  */
-public interface IEmployeeService
+public interface EmployeeService
 {
     Employee findById(int id);
 

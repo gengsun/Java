@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import sun.java.spring.mvc.model.Employee;
-import sun.java.spring.mvc.service.IEmployeeService;
+import sun.java.spring.mvc.service.EmployeeService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.Locale;
 public class AppController
 {
     @Autowired
-    IEmployeeService service;
+    EmployeeService service;
 
     @Autowired
     MessageSource messageSource;

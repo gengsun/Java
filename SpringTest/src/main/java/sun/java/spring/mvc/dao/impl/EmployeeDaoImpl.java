@@ -4,7 +4,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
-import sun.java.spring.mvc.dao.IEmployeeDao;
+import sun.java.spring.mvc.dao.EmployeeDao;
 import sun.java.spring.mvc.model.Employee;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by sun on 16/11/15.
  */
 @Repository("employeeDao")
-public class EmployeeDao extends AbstractDao<Integer, Employee> implements IEmployeeDao
+public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements EmployeeDao
 {
     @Override
     public Employee findById(int id)
