@@ -30,7 +30,7 @@ public class EmployeeDao extends AbstractDao<Integer, Employee> implements IEmpl
     @Override
     public void deleteEmployeeByNin(String nin)
     {
-        Query query = getSession().createSQLQuery("delete from Employee where nin = :nin");
+        Query query = getSession().createSQLQuery("delete from EMPLOYEE where nin = :nin");
         query.setString("nin", nin);
         query.executeUpdate();
     }
