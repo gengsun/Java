@@ -182,12 +182,12 @@
         <executions>
           <execution>
             <id>auto-clean</id>
-            <phase>install</phase>
+            <phase>clean</phase>
             <goals>
               <goal>clean</goal>
             </goals>
             <configuration>
-              <excludeDefaultDirectories>true</excludeDefaultDirectories>
+              <!--<excludeDefaultDirectories>true</excludeDefaultDirectories>-->
               <filesets>
                 <fileset>
                   <directory>src/main/webapp</directory>
@@ -197,13 +197,13 @@
                     <include>**/META-INF/</include>
                   </includes>
                 </fileset>
-                <fileset>
-                  <directory>${project.build.directory}</directory>
-                  <excludes>
-                    <exclude>**/*dist/</exclude>
-                    <exclude>**/*.tar.gz</exclude>
-                  </excludes>
-                </fileset>
+                <!--<fileset>-->
+                  <!--<directory>${project.build.directory}</directory>-->
+                  <!--<excludes>-->
+                    <!--<exclude>**/*dist/</exclude>-->
+                    <!--<exclude>**/*.tar.gz</exclude>-->
+                  <!--</excludes>-->
+                <!--</fileset>-->
               </filesets>
             </configuration>
           </execution>
