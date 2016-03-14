@@ -9,4 +9,12 @@
 
   <context:component-scan base-package="sun.test.spring"/>
 
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+      <list>
+        <value>classpath:name.properties</value>
+      </list>
+    </property>
+  </bean>
+
 </beans>
