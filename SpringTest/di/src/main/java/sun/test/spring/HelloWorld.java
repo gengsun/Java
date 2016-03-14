@@ -12,15 +12,20 @@ import org.springframework.stereotype.Component;
 public class HelloWorld
 {
     @Autowired
-    @Qualifier("AppImpl2")
+    @Qualifier("AppImpl1")
     private AppService appService;
 
-    @Value("${name.wife:Geng Sun}")
+    @Value("${name.son:Sun}")
     private String name;
+
+    @Value("${enabled}")
+    private boolean isEnabled;
 
     public void print()
     {
         appService.print();
-        System.out.println(name);
+
+        if (isEnabled)
+            System.out.println(name);
     }
 }
