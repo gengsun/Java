@@ -12,7 +12,7 @@
   <name>Spring Test</name>
 
   <modules>
-    <module>SpringDI</module>
+    <module>di</module>
   </modules>
 
 </project>
