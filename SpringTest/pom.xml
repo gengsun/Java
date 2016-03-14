@@ -13,7 +13,7 @@
 
   <modules>
     <module>di</module>
-    <module>aspect</module>
+    <module>aop</module>
   </modules>
 
   <dependencies>
