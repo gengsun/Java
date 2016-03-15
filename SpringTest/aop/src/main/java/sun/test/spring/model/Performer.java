@@ -1,4 +1,4 @@
-package sun.test.spring.service;
+package sun.test.spring.model;
 
 import org.springframework.stereotype.Component;
 

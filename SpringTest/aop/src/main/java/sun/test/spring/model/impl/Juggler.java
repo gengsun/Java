@@ -1,7 +1,8 @@
-package sun.test.spring.service;
+package sun.test.spring.model.impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import sun.test.spring.model.Performer;
 
 /**
  * Created by sun on 15/03/16.
@@ -16,6 +17,6 @@ public class Juggler implements Performer
     @Override
     public void perform()
     {
-        System.out.println("Juggler: " + name + " is performing...");
+        System.out.println("Juggler: " + name + " is juggling...");
     }
 }

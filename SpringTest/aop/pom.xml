@@ -11,7 +11,7 @@
   <groupId>sun.test.spring</groupId>
   <artifactId>aop</artifactId>
   <packaging>jar</packaging>
-  <name>aspect</name>
+  <name>Spring AOP</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,7 +1,7 @@
 package sun.test.spring.aop;
 
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -14,25 +14,25 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class Audience
 {
-    @Before("execution(* sun.test.spring.service.Performer.perform(..))")
+    @Before("execution(* sun.test.spring.model.Performer.perform(..))")
     public void takeSeats()
     {
         System.out.println("The audience is taking their seats.");
     }
 
-    @Before("execution(* sun.test.spring.service.Performer.perform(..))")
+    @Before("execution(* sun.test.spring.model.Performer.perform(..))")
     public void turnOffCellPhones()
     {
         System.out.println("The audience is turning off their mobile phones");
     }
 
-    @After("execution(* sun.test.spring.service.Performer.perform(..))")
+    @AfterReturning("execution(* sun.test.spring.model.Performer.perform(..))")
     public void applaud()
     {
         System.out.println("CLAP CLAP CLAP CLAP CLAP");
     }
 
-    @AfterReturning("execution(* sun.test.spring.service.Performer.perform(..))")
+    @AfterThrowing("execution(* sun.test.spring.model.Performer.perform(..))")
     public void demandRefund()
     {
         System.out.println("Boo! We want our money back!");
