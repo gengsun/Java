@@ -1,9 +1,7 @@
 package sun.test.spring.aop;
 
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,27 +12,29 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class Audience
 {
-    @Before("execution(* sun.test.spring.model.Performer.perform(..))")
-    public void takeSeats()
+    @Pointcut("execution(* sun.test.spring.model.Performer.perform(..))")
+    public void performance() {}
+
+    @Around("performance()")
+    public void watchPerformance(ProceedingJoinPoint joinPoint)
     {
         System.out.println("The audience is taking their seats.");
-    }
+        System.out.println("The audience is turning off their mobile phones.");
 
-    @Before("execution(* sun.test.spring.model.Performer.perform(..))")
-    public void turnOffCellPhones()
-    {
-        System.out.println("The audience is turning off their mobile phones");
-    }
+        Long start = System.currentTimeMillis();
+        Long end = null;
 
-    @AfterReturning("execution(* sun.test.spring.model.Performer.perform(..))")
-    public void applaud()
-    {
-        System.out.println("CLAP CLAP CLAP CLAP CLAP");
-    }
-
-    @AfterThrowing("execution(* sun.test.spring.model.Performer.perform(..))")
-    public void demandRefund()
-    {
-        System.out.println("Boo! We want our money back!");
+        try {
+            joinPoint.proceed();
+            System.out.println("CLAP CLAP CLAP CLAP CLAP");
+        }
+        catch (Throwable throwable) {
+            System.out.println("Boo! We want our money back!");
+            throwable.printStackTrace();
+        }
+        finally {
+            end = System.currentTimeMillis();
+            System.out.println("The performance took " + (end - start) + " milliseconds.");
+        }
     }
 }

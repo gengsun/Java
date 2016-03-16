@@ -12,7 +12,7 @@
 
   <aop:aspectj-autoproxy/>
 
-  <context:component-scan base-package="sun.test.spring" />
+  <context:component-scan base-package="sun.test.spring"/>
 
   <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="locations">
@@ -21,5 +21,20 @@
       </list>
     </property>
   </bean>
+
+  <!--<aop:config>-->
+    <!--<aop:aspect ref="magician">-->
+
+      <!--<aop:pointcut-->
+          <!--id="thinking"-->
+          <!--expression="execution(* sun.test.spring.model.Thinker.thinkOfSomething(String)) and args(thoughts)"/>-->
+
+      <!--<aop:before-->
+          <!--pointcut-ref="thinking"-->
+          <!--method="interceptThoughts"-->
+          <!--arg-names="thoughts" />-->
+
+    <!--</aop:aspect>-->
+  <!--</aop:config>-->
 
 </beans>
