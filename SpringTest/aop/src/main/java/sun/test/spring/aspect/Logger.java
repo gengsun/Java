@@ -1,4 +1,4 @@
-package sun.test.spring.aop;
+package sun.test.spring.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;

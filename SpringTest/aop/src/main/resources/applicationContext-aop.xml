@@ -22,19 +22,4 @@
     </property>
   </bean>
 
-  <!--<aop:config>-->
-    <!--<aop:aspect ref="magician">-->
-
-      <!--<aop:pointcut-->
-          <!--id="thinking"-->
-          <!--expression="execution(* sun.test.spring.model.Thinker.thinkOfSomething(String)) and args(thoughts)"/>-->
-
-      <!--<aop:before-->
-          <!--pointcut-ref="thinking"-->
-          <!--method="interceptThoughts"-->
-          <!--arg-names="thoughts" />-->
-
-    <!--</aop:aspect>-->
-  <!--</aop:config>-->
-
 </beans>
