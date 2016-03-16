@@ -20,6 +20,7 @@ public class Stage
 
     public void startPlay()
     {
-        thinker.thinkOfSomething("Queen of Hearts");
+//        thinker.thinkOfSomething("Queen of Hearts");
+        performer.perform();
     }
 }
