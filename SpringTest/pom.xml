@@ -11,9 +11,14 @@
 
   <name>Spring Test</name>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <modules>
     <module>di</module>
     <module>aop</module>
+    <module>hibernate</module>
   </modules>
 
   <dependencies>
